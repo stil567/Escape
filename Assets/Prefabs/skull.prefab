@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 399243573254510690}
   - component: {fileID: 3613503730395011015}
   - component: {fileID: 1567614643972514573}
+  - component: {fileID: 3653819369769465143}
+  - component: {fileID: -7966781693784087817}
   m_Layer: 0
   m_Name: skull
   m_TagString: Untagged
@@ -58,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4380ef6927333794b86415f3668dd550, type: 2}
+  - {fileID: 2100000, guid: 6c7da534adf849442ab00c554ac221d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,3 +81,44 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3653819369769465143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063330302375559896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f9208123a899e47a36805faf100cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  moveSpots:
+  - {fileID: 0}
+  - {fileID: 0}
+  startWaitTime: 0
+--- !u!114 &-7966781693784087817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063330302375559896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d673a61161d013c45ad0752852dbf44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartButton: {fileID: 0}
+  Noticed: {fileID: 0}
+  radius: 0
+  angle: 0
+  alenka: {fileID: 0}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  canSeeAlenka: 0

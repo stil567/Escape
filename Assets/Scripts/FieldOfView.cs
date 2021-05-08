@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
+    public GameObject restartButton; //кнопка перезапуска уровня
+    public GameObject Noticed;//сообщение об обнаружении
     public float radius;
     [Range(0,360)]
     public float angle;
@@ -47,7 +49,10 @@ public class FieldOfView : MonoBehaviour
                 float distanceToTarget = Vector3.Distance(transform.position, target.position); //находим расстояние между врагов и персонажем для ограничения луча
 
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask)) //если не наткнулись на препятствие, то персонаж замечен
+                { 
                     canSeeAlenka = true;
+                    GameOver();
+                }
                 else
                     canSeeAlenka = false;
             }
@@ -57,6 +62,11 @@ public class FieldOfView : MonoBehaviour
         else if (canSeeAlenka) //если раньше были в поле зрении врага
             canSeeAlenka = false;
     }
-
-
+    private void GameOver()//функця проигрыша
+    {
+        restartButton.SetActive(true);//появляется кнопка перезапуска
+        Noticed.SetActive(true);//появляется сообщение
+        GetComponent<Patrol>().enabled = false;//отключение перемещения врага
+        GameObject.FindGameObjectWithTag("Player").GetComponent<AlenkaMove>().enabled = false;//отключение перемещения гг
+    }
 }
