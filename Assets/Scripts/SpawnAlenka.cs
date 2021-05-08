@@ -5,8 +5,8 @@ using UnityEngine;
 public class SpawnAlenka : MonoBehaviour
 {
     public GameObject alenka, appeal;
+    public GameObject spawn;//точка появления ГГ
 
-    Vector3 alenkaPos = new Vector3(0, 1, -5);
     void Start()
     {
         Invoke("SpawnEffects", 0.5f);
@@ -15,10 +15,10 @@ public class SpawnAlenka : MonoBehaviour
 
     void SpawnPerson()//генирация ГГ
     {
-        Instantiate(alenka, alenkaPos, Quaternion.identity);
+        Instantiate(alenka, spawn.transform.position, Quaternion.identity);
     }
     void SpawnEffects()//генирация эффекта
     {
-        Instantiate(appeal, alenkaPos, Quaternion.identity);
+        Instantiate(appeal, spawn.transform.position, Quaternion.identity);
     }
 }
