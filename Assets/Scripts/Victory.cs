@@ -5,12 +5,17 @@ using UnityEngine;
 public class Victory : MonoBehaviour
 {
     public GameObject nextLevelButton; //кнопка перехода на следующий уровень
+    public GameObject nextLevelText; //надпись о окончании уровня
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            nextLevelButton.SetActive(true);//появляется кнопка перезапуска
-            GameObject.FindGameObjectWithTag("Player").GetComponent<AlenkaMove>().enabled = false;//отключение перемещения гг
+            //появление конпки и сообщения о прохождении уровня
+            nextLevelButton.SetActive(true);
+            nextLevelText.SetActive(true);
+
+            //отключение перемещения гг
+            GameObject.FindGameObjectWithTag("Player").GetComponent<AlenkaMove>().enabled = false;
         }
     }
 }
